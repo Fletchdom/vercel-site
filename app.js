@@ -32,7 +32,7 @@ const MOVIES = Array.from({ length: 96 }, (_, index) => {
   const year = 2026 - (index % 9);
   const score = (9.5 - (index % 18) * 0.08).toFixed(1);
   const hot = 9900 - index * 73;
-  const poster = `./assets/posters/poster-${String((index % 24) + 1).padStart(2, "0")}.png`;
+  const poster = `./assets/posters/poster-${String((index % 32) + 1).padStart(2, "0")}.png`;
   const id = `jp-${String(index + 1).padStart(3, "0")}`;
   const region = ["日本", "日本院线", "日本独立电影", "日本动画"][index % 4];
   const director = DIRECTORS[index % DIRECTORS.length];

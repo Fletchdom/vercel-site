@@ -265,12 +265,12 @@ h2 {
 .feature-grid,
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 14px;
 }
 
 .feature-grid {
-  grid-template-columns: 1.25fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
 }
 
 .movie-card {
@@ -293,7 +293,7 @@ h2 {
 
 .poster {
   position: relative;
-  aspect-ratio: 0.69;
+  aspect-ratio: 0.68;
   background: #24201e;
   overflow: hidden;
 }
@@ -307,52 +307,52 @@ h2 {
 .badge,
 .score {
   position: absolute;
-  top: 10px;
+  top: 8px;
   z-index: 1;
-  padding: 5px 8px;
+  padding: 4px 7px;
   border-radius: 6px;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 850;
 }
 
 .badge {
-  left: 10px;
+  left: 8px;
   color: #17110c;
   background: var(--gold);
 }
 
 .score {
-  right: 10px;
+  right: 8px;
   color: #ffffff;
   background: rgba(17, 17, 17, 0.82);
 }
 
 .card-body {
-  padding: 14px;
+  padding: 10px;
 }
 
 .card-body h3 {
-  margin-bottom: 8px;
-  font-size: 1.02rem;
+  margin-bottom: 7px;
+  font-size: 0.92rem;
   line-height: 1.35;
 }
 
 .meta-row {
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.78rem;
 }
 
 .tags {
-  gap: 6px;
+  gap: 5px;
   flex-wrap: wrap;
-  margin-top: 12px;
+  margin-top: 9px;
 }
 
 .tag {
-  padding: 4px 8px;
-  font-size: 0.78rem;
+  padding: 3px 7px;
+  font-size: 0.72rem;
 }
 
 .split {
@@ -446,9 +446,9 @@ select {
 
 .detail-hero {
   display: grid;
-  grid-template-columns: minmax(250px, 360px) minmax(0, 1fr);
+  grid-template-columns: minmax(210px, 300px) minmax(0, 1fr);
   gap: clamp(22px, 4vw, 44px);
-  padding: 56px clamp(16px, 4vw, 56px);
+  padding: 44px clamp(16px, 4vw, 56px);
 }
 
 .detail-poster {
@@ -471,7 +471,7 @@ select {
 }
 
 .player-panel {
-  margin: 0 clamp(16px, 4vw, 56px) 56px;
+  margin: 0 clamp(16px, 4vw, 56px) 44px;
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
@@ -480,7 +480,7 @@ select {
 
 .player-screen {
   position: relative;
-  min-height: 420px;
+  min-height: 360px;
   display: grid;
   place-items: center;
   background-size: cover;
@@ -529,10 +529,7 @@ select {
 }
 
 .site-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 34px clamp(16px, 4vw, 56px);
+  padding: 42px clamp(16px, 4vw, 56px) 22px;
   border-top: 1px solid var(--line);
   background: #0d0d0d;
 }
@@ -541,24 +538,51 @@ select {
   margin: 8px 0 0;
 }
 
-.site-footer nav {
-  gap: 18px;
-  flex-wrap: wrap;
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(140px, 0.8fr));
+  gap: 28px;
+}
+
+.footer-brand p,
+.footer-column p,
+.footer-bottom {
   color: var(--muted);
+  line-height: 1.7;
+}
+
+.footer-column {
+  display: grid;
+  align-content: start;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.footer-column strong {
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.footer-column a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 0.84rem;
 }
 
 @media (max-width: 1080px) {
-  .feature-grid,
-  .movie-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .feature-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .split,
-  .detail-grid {
+  .detail-grid,
+  .footer-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -580,13 +604,11 @@ select {
   }
 
   .section-head,
-  .site-footer {
+  .footer-bottom {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .feature-grid,
-  .movie-grid,
   .toolbar,
   .detail-hero {
     grid-template-columns: 1fr;
@@ -601,15 +623,15 @@ select {
   .movie-grid,
   .feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    gap: 10px;
   }
 
   .card-body {
-    padding: 10px;
+    padding: 9px;
   }
 
   .card-body h3 {
-    font-size: 0.93rem;
+    font-size: 0.86rem;
   }
 
   .meta-row,
