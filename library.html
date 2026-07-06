@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日本电影片库 - 80+ 最新日本电影、经典日影、动漫电影在线观看推荐</title>
+    <meta
+      name="description"
+      content="日本电影片库收录80+部最新日本电影、经典日影、动漫电影、悬疑犯罪、爱情治愈和高分日影推荐，支持类型筛选、关键词搜索与评分排序。"
+    />
+    <meta
+      name="keywords"
+      content="日本电影片库,日本电影大全,日本电影在线,日本电影推荐,80部日本电影,经典日影片库,日本动漫电影,日本悬疑电影,日本爱情电影,高清日影"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="library">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="日本电影网首页">
+        <span class="brand-mark">映</span>
+        <span>日本电影网</span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="./index.html">首页</a>
+        <a class="active" href="./library.html">片库</a>
+        <a href="./library.html?genre=动漫">动漫电影</a>
+        <a href="./library.html?genre=悬疑">悬疑日影</a>
+        <a href="./index.html#rank">日影排行</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-title">
+        <p class="eyebrow">片库大全</p>
+        <h1>日本电影片库</h1>
+        <p>按类型、年份、评分和关键词查找最新日本电影、经典日影、动漫电影与高清日影推荐。</p>
+      </section>
+
+      <section class="toolbar" aria-label="片库筛选">
+        <label>
+          <span>搜索</span>
+          <input id="searchInput" type="search" placeholder="输入片名、导演、演员、类型" />
+        </label>
+        <label>
+          <span>类型</span>
+          <select id="genreSelect">
+            <option value="">全部类型</option>
+          </select>
+        </label>
+        <label>
+          <span>排序</span>
+          <select id="sortSelect">
+            <option value="hot">按热度</option>
+            <option value="score">按评分</option>
+            <option value="year">按年份</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="section flush">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">全部影片</p>
+            <h2 id="libraryTitle">80+ 部日本电影推荐</h2>
+          </div>
+          <span class="count-label" id="libraryCount"></span>
+        </div>
+        <div class="movie-grid library-grid" id="libraryMovies"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>日本电影网</strong>
+        <p>日本电影、经典日影、动漫电影、悬疑爱情片库与高清观影推荐。</p>
+      </div>
+      <nav aria-label="底部导航">
+        <a href="./index.html">首页</a>
+        <a href="./library.html">片库</a>
+        <a href="./library.html?genre=新片">最新日本电影</a>
+        <a href="./library.html?genre=爱情">爱情日影</a>
+      </nav>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

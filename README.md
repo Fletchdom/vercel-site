@@ -1,17 +1,16 @@
-# Vercel Starter
+# 日本电影网
 
-This is a simple static website that can be deployed on Vercel.
+一个纯静态日本电影门户站，包含首页、片库、详情页、筛选搜索、排行、底部导航、本地海报资源和 SEO TDK。
 
-## Update the site
+## 页面
 
-Edit `index.html` and `styles.css`.
+- `index.html`
+- `library.html`
+- `movie.html`
 
-## Push to GitHub
+## 内容结构
 
-```powershell
-git remote add origin https://github.com/YOUR_NAME/YOUR_REPO.git
-git branch -M main
-git push -u origin main
-```
-
-After pushing, open Vercel and import this GitHub repository.
+- 首页展示 36 部内容
+- 片库生成 96 部内容
+- 详情页通过 `movie.html?id=jp-001` 这类地址展示
+- 影片数据和页面渲染逻辑在 `app.js`
