@@ -46,15 +46,21 @@ img {
   position: sticky;
   top: 0;
   z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
   min-height: 72px;
   padding: 0 clamp(16px, 4vw, 56px);
   border-bottom: 1px solid var(--line);
   background: rgba(17, 17, 17, 0.86);
   backdrop-filter: blur(18px);
+}
+
+.header-inner {
+  width: min(1440px, 100%);
+  min-height: 72px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 26px;
+  margin: 0 auto;
 }
 
 .brand,
@@ -85,9 +91,10 @@ img {
 }
 
 .nav-links {
-  gap: clamp(12px, 2vw, 28px);
+  justify-content: center;
+  gap: clamp(10px, 1.55vw, 24px);
   color: var(--muted);
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   white-space: nowrap;
   overflow-x: auto;
 }
@@ -101,6 +108,21 @@ img {
 .nav-links a:hover {
   color: var(--text);
   border-color: var(--accent);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(231, 183, 95, 0.42);
+  border-radius: 8px;
+  color: var(--gold);
+  font-size: 0.88rem;
+  font-weight: 800;
+  white-space: nowrap;
+  background: rgba(231, 183, 95, 0.08);
 }
 
 .hero {
@@ -238,6 +260,8 @@ h2 {
 
 .section,
 .page-title {
+  width: min(1440px, 100%);
+  margin: 0 auto;
   padding: 56px clamp(16px, 4vw, 56px);
 }
 
@@ -265,12 +289,12 @@ h2 {
 .feature-grid,
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(188px, 1fr));
+  gap: 16px;
 }
 
 .feature-grid {
-  grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
 }
 
 .movie-card {
@@ -539,8 +563,10 @@ select {
 }
 
 .footer-grid {
+  width: min(1440px, 100%);
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(140px, 0.8fr));
+  grid-template-columns: minmax(260px, 1.35fr) repeat(3, minmax(170px, 0.9fr));
   gap: 28px;
 }
 
@@ -569,11 +595,14 @@ select {
 }
 
 .footer-bottom {
+  width: min(1440px, 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 18px;
   border-top: 1px solid var(--line);
   font-size: 0.84rem;
@@ -589,14 +618,23 @@ select {
 
 @media (max-width: 760px) {
   .site-header {
-    align-items: flex-start;
-    flex-direction: column;
     padding-top: 12px;
     padding-bottom: 0;
   }
 
+  .header-inner {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
   .nav-links {
+    justify-content: flex-start;
     width: 100%;
+  }
+
+  .nav-cta {
+    margin-bottom: 12px;
   }
 
   .hero {
